@@ -1,5 +1,5 @@
 ---
-title: "Iowa Housing Price Analysis"
+title: "MSDS 6371 Project: Iowa Housing Price Analysis"
 author: 'Team : Heindel Adu, Juan Nunez, Queena Wang, Stanford Finney'
 date: "August 2019"
 output: 
@@ -11,4 +11,51 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Executive Summary
+HJQ Analytics Group is a Texas-based data science company helping clients make sense out of their data.
+Century 21 Ames, a real estate company in Ames, Iowa commissed HJQ Analytics Group to evaluate the pricing data for the several homes in the Iowa real estate market to determine the key factors of the home that drive prices. 
+*********************************Add other information in this column*************************
+
+This project includes the following steps:
+  1. Acquiring, cleaning and understanding of the dataset. 
+  2. Run Exploratory Data Analysis on the data.
+  3. Build a predictive model without machine learning techniques to predict the price of a given home.
+    a. Client requires 4 models
+  4. Report conclusions.
+
+
+
+```{r Load Libraries, message=FALSE, warning=FALSE}
+library(knitr)
+library(plotly)
+library(ggplot2)
+library(plyr)
+library(dplyr)
+library(corrplot)
+library(gridExtra)
+library(scales)
+library(Rmisc)
+library(ggrepel)
+library(psych)
+library(readr)
+library(tidyverse)
+library(kernlab)
+
+
+```
+
+#Load datasets into R environment.
+Read both train and test datasets as dataframes.
+
+```{r Load Data}
+
+trainData <- read.csv("train.csv", stringsAsFactors = F)
+testData <- read.csv("test.csv", stringsAsFactors = F)
+dim(trainData)
+dim(testData)
+str(trainData[, c(1:10, 81)])
+#View(trainData)
+#View(testData)
 ```
